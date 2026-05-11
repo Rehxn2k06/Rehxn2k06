@@ -1,60 +1,56 @@
 ```aura width=800 height=380 link="https://github.com/Rehxn2k06"
 <div style={{position:'relative',display:'flex',flexDirection:'column',width:'100%',height:'100%',background:'#080808',overflow:'hidden',fontFamily:'Inter, sans-serif'}}>
   <style>{`
-    @keyframes scan{0%{transform:translateY(0px);opacity:0}8%{opacity:.6}92%{opacity:.2}100%{transform:translateY(381px);opacity:0}}
-    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-    @keyframes pdot{0%,100%{opacity:.2}50%{opacity:1}}
-    @keyframes gfade{0%,100%{opacity:.04}50%{opacity:.13}}
-    #sl{animation:scan 8s linear infinite}
-    #cur{animation:blink 1.2s step-end infinite}
-    #dot{animation:pdot 2.5s ease-in-out infinite}
-    #ga{animation:gfade 10s ease-in-out infinite}
-    #gb{animation:gfade 14s ease-in-out infinite 3s}
+    @keyframes orb-a{0%,100%{opacity:.35}50%{opacity:1}}
+    @keyframes orb-b{0%,100%{opacity:.25}50%{opacity:.9}}
+    @keyframes scanmove{0%{transform:translateY(0px);opacity:0}8%{opacity:.85}92%{opacity:.6}100%{transform:translateY(384px);opacity:0}}
+    @keyframes dotblink{0%,100%{opacity:.15}50%{opacity:1}}
+    #ob1{animation:orb-a 10s ease-in-out infinite}
+    #ob2{animation:orb-b 14s ease-in-out infinite 3s}
+    #scl{animation:scanmove 7s linear infinite}
+    #sdt{animation:dotblink 2.5s ease-in-out infinite}
   `}</style>
 
-  <div id="ga" style={{position:'absolute',top:-100,right:-100,width:420,height:420,borderRadius:'50%',background:'radial-gradient(circle,rgba(103,232,249,.22) 0%,transparent 65%)'}}/>
-  <div id="gb" style={{position:'absolute',bottom:-120,left:-80,width:340,height:340,borderRadius:'50%',background:'radial-gradient(circle,rgba(103,232,249,.13) 0%,transparent 65%)'}}/>
+  <ellipse id="ob1" cx="710" cy="-50" rx="230" ry="230" fill="rgba(103,232,249,.3)"/>
+  <ellipse id="ob2" cx="-60" cy="440" rx="190" ry="190" fill="rgba(103,232,249,.2)"/>
+  <rect id="scl" x="0" y="-2" width="800" height="1.5" fill="rgba(103,232,249,.8)"/>
+  <circle id="sdt" cx="746" cy="31" r="2.8" fill="#67E8F9"/>
 
-  <div id="sl" style={{position:'absolute',left:0,right:0,height:1,background:'linear-gradient(90deg,transparent,rgba(103,232,249,.5) 35%,rgba(103,232,249,.85) 50%,rgba(103,232,249,.5) 65%,transparent)'}}/>
+  <polyline points="32,18 18,18 18,32"      fill="none" stroke="rgba(103,232,249,.5)" strokeWidth="1.5"/>
+  <polyline points="768,18 782,18 782,32"   fill="none" stroke="rgba(103,232,249,.5)" strokeWidth="1.5"/>
+  <polyline points="18,348 18,362 32,362"   fill="none" stroke="rgba(103,232,249,.5)" strokeWidth="1.5"/>
+  <polyline points="782,348 782,362 768,362" fill="none" stroke="rgba(103,232,249,.5)" strokeWidth="1.5"/>
 
-  <div style={{position:'absolute',top:18,left:18,width:14,height:14,borderTop:'1.5px solid rgba(103,232,249,.5)',borderLeft:'1.5px solid rgba(103,232,249,.5)'}}/>
-  <div style={{position:'absolute',top:18,right:18,width:14,height:14,borderTop:'1.5px solid rgba(103,232,249,.5)',borderRight:'1.5px solid rgba(103,232,249,.5)'}}/>
-  <div style={{position:'absolute',bottom:18,left:18,width:14,height:14,borderBottom:'1.5px solid rgba(103,232,249,.5)',borderLeft:'1.5px solid rgba(103,232,249,.5)'}}/>
-  <div style={{position:'absolute',bottom:18,right:18,width:14,height:14,borderBottom:'1.5px solid rgba(103,232,249,.5)',borderRight:'1.5px solid rgba(103,232,249,.5)'}}/>
-
-  <div style={{position:'absolute',top:26,right:44,display:'flex',alignItems:'center',gap:7}}>
-    <div id="dot" style={{width:5,height:5,borderRadius:'50%',background:'#67E8F9'}}/>
+  <div style={{position:'absolute',top:24,right:44,display:'flex',alignItems:'center',gap:7}}>
     <div style={{color:'rgba(103,232,249,.55)',fontSize:9,letterSpacing:2.5}}>STATUS: ACTIVE</div>
   </div>
 
-  <div style={{display:'flex',flexDirection:'column',justifyContent:'center',height:'100%',padding:'0 56px'}}>
+  <div style={{display:'flex',flexDirection:'column',justifyContent:'center',flex:1,padding:'0 56px'}}>
     <div style={{color:'rgba(103,232,249,.55)',fontSize:10,letterSpacing:4,marginBottom:18}}>REHAN IMTIYAJ MULLA  ·  ML ENGINEER</div>
-    <div style={{color:'#FFFFFF',fontSize:68,fontWeight:800,letterSpacing:-2,lineHeight:1,marginBottom:2}}>Building</div>
+    <div style={{color:'#FFFFFF',fontSize:68,fontWeight:800,letterSpacing:-2,lineHeight:1}}>Building</div>
     <div style={{display:'flex',alignItems:'baseline',marginBottom:26}}>
       <div style={{color:'#FFFFFF',fontSize:68,fontWeight:800,letterSpacing:-2,lineHeight:1}}>Intelligence</div>
-      <div id="cur" style={{color:'#67E8F9',fontSize:68,fontWeight:300,lineHeight:1,marginLeft:4}}>_</div>
+      <div style={{color:'#67E8F9',fontSize:68,fontWeight:200,lineHeight:1}}>_</div>
     </div>
-    <div style={{color:'rgba(255,255,255,.4)',fontSize:13.5,lineHeight:1.65}}>
-      CSE + Data Science @ DSCE, Bengaluru  ·  Reliance Foundation Scholar 24  ·  Targeting quant / ML research
-    </div>
+    <div style={{color:'rgba(255,255,255,.4)',fontSize:13.5,lineHeight:1.65}}>CSE + Data Science @ DSCE, Bengaluru  ·  Reliance Foundation Scholar 24  ·  Targeting quant / ML research</div>
   </div>
 
   <div style={{position:'absolute',bottom:26,left:56,display:'flex',gap:40}}>
     <div style={{display:'flex',flexDirection:'column',gap:3}}>
       <div style={{color:'rgba(255,255,255,.18)',fontSize:8,letterSpacing:2}}>LOCATION</div>
-      <div style={{color:'rgba(255,255,255,.5)',fontSize:10,letterSpacing:.5}}>BENGALURU, IN</div>
+      <div style={{color:'rgba(255,255,255,.5)',fontSize:10}}>BENGALURU, IN</div>
     </div>
     <div style={{display:'flex',flexDirection:'column',gap:3}}>
       <div style={{color:'rgba(255,255,255,.18)',fontSize:8,letterSpacing:2}}>CGPA</div>
-      <div style={{color:'rgba(255,255,255,.5)',fontSize:10,letterSpacing:.5}}>9.0 / 10.0</div>
+      <div style={{color:'rgba(255,255,255,.5)',fontSize:10}}>9.0 / 10.0</div>
     </div>
     <div style={{display:'flex',flexDirection:'column',gap:3}}>
       <div style={{color:'rgba(255,255,255,.18)',fontSize:8,letterSpacing:2}}>GRAD</div>
-      <div style={{color:'rgba(255,255,255,.5)',fontSize:10,letterSpacing:.5}}>2028</div>
+      <div style={{color:'rgba(255,255,255,.5)',fontSize:10}}>2028</div>
     </div>
     <div style={{display:'flex',flexDirection:'column',gap:3}}>
       <div style={{color:'rgba(255,255,255,.18)',fontSize:8,letterSpacing:2}}>SCHOLAR</div>
-      <div style={{color:'#67E8F9',fontSize:10,letterSpacing:.5}}>RELIANCE FOUNDATION 24</div>
+      <div style={{color:'#67E8F9',fontSize:10}}>RELIANCE FOUNDATION 24</div>
     </div>
   </div>
 </div>
@@ -67,7 +63,7 @@
 
     <div style={{position:'relative',display:'flex',flexDirection:'column',flex:1,border:'1px solid rgba(255,255,255,.07)',padding:'18px',gap:8}}>
       <div style={{position:'absolute',top:-1,left:-1,width:10,height:10,borderTop:'1.5px solid rgba(103,232,249,.7)',borderLeft:'1.5px solid rgba(103,232,249,.7)'}}/>
-      <div style={{color:'rgba(255,255,255,.2)',fontSize:8,letterSpacing:2,marginBottom:2}}>01 / CURA</div>
+      <div style={{color:'rgba(255,255,255,.2)',fontSize:8,letterSpacing:2}}>01 / CURA</div>
       <div style={{color:'#FFFFFF',fontSize:15,fontWeight:700,lineHeight:1.25}}>ICU Deterioration Predictor</div>
       <div style={{color:'rgba(255,255,255,.38)',fontSize:10.5,lineHeight:1.55}}>Isolation Forest + LSTM pipeline for early patient deterioration detection. Dockerized, production-grade.</div>
       <div style={{color:'#67E8F9',fontSize:10,fontWeight:600,marginTop:'auto'}}>94.1% acc  ·  100% recall</div>
@@ -80,7 +76,7 @@
 
     <div style={{position:'relative',display:'flex',flexDirection:'column',flex:1,border:'1px solid rgba(255,255,255,.07)',padding:'18px',gap:8}}>
       <div style={{position:'absolute',top:-1,left:-1,width:10,height:10,borderTop:'1.5px solid rgba(103,232,249,.7)',borderLeft:'1.5px solid rgba(103,232,249,.7)'}}/>
-      <div style={{color:'rgba(255,255,255,.2)',fontSize:8,letterSpacing:2,marginBottom:2}}>02 / AEGIS</div>
+      <div style={{color:'rgba(255,255,255,.2)',fontSize:8,letterSpacing:2}}>02 / AEGIS</div>
       <div style={{color:'#FFFFFF',fontSize:15,fontWeight:700,lineHeight:1.25}}>LLM Robustness Framework</div>
       <div style={{color:'rgba(255,255,255,.38)',fontSize:10.5,lineHeight:1.55}}>Adversarial prompt hardening and robustness testing for large language models under distribution shift.</div>
       <div style={{color:'#67E8F9',fontSize:10,fontWeight:600,marginTop:'auto'}}>~40% token reduction</div>
@@ -93,7 +89,7 @@
 
     <div style={{position:'relative',display:'flex',flexDirection:'column',flex:1,border:'1px solid rgba(255,255,255,.07)',padding:'18px',gap:8}}>
       <div style={{position:'absolute',top:-1,left:-1,width:10,height:10,borderTop:'1.5px solid rgba(103,232,249,.7)',borderLeft:'1.5px solid rgba(103,232,249,.7)'}}/>
-      <div style={{color:'rgba(255,255,255,.2)',fontSize:8,letterSpacing:2,marginBottom:2}}>03 / AUXESIS</div>
+      <div style={{color:'rgba(255,255,255,.2)',fontSize:8,letterSpacing:2}}>03 / AUXESIS</div>
       <div style={{color:'#FFFFFF',fontSize:15,fontWeight:700,lineHeight:1.25}}>Compiler Flag Recommender</div>
       <div style={{color:'rgba(255,255,255,.38)',fontSize:10.5,lineHeight:1.55}}>Surrogate XGBoost model predicting compiler runtime from static code features via LOO cross-validation.</div>
       <div style={{color:'#67E8F9',fontSize:10,fontWeight:600,marginTop:'auto'}}>R²=0.91  ·  RMSE=0.029s</div>
@@ -112,7 +108,6 @@
 <div style={{display:'flex',flexDirection:'column',width:'100%',height:'100%',background:'#080808',fontFamily:'Inter, sans-serif',padding:'28px 56px 24px'}}>
   <div style={{color:'rgba(103,232,249,.55)',fontSize:9,letterSpacing:3,marginBottom:20}}>CURRENTLY BUILDING</div>
   <div style={{display:'flex',gap:48}}>
-
     <div style={{display:'flex',flexDirection:'column',gap:12,flex:1}}>
       <div style={{display:'flex',gap:10,alignItems:'flex-start'}}>
         <div style={{color:'#67E8F9',fontSize:10,marginTop:1}}>▸</div>
@@ -129,7 +124,6 @@
         </div>
       </div>
     </div>
-
     <div style={{display:'flex',flexDirection:'column',gap:12,flex:1}}>
       <div style={{display:'flex',gap:10,alignItems:'flex-start'}}>
         <div style={{color:'#67E8F9',fontSize:10,marginTop:1}}>▸</div>
@@ -146,7 +140,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
 ```
@@ -167,23 +160,23 @@
 ```
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Rehxn2k06&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&bg_color=080808&title_color=67E8F9&icon_color=67E8F9" height="160"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=Rehxn2k06&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&bg_color=080808&title_color=67E8F9&icon_color=67E8F9" height="155"/>
   &nbsp;&nbsp;
-  <img src="https://streak-stats.demolab.com?user=Rehxn2k06&theme=tokyonight&hide_border=true&background=080808&ring=67E8F9&fire=67E8F9&currStreakLabel=67E8F9" height="160"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rehxn2k06&layout=compact&theme=tokyonight&hide_border=true&bg_color=080808&title_color=67E8F9" height="155"/>
 </p>
 
-```aura width=150 height=44 link="https://www.linkedin.com/in/rehan-mulla-8719b62b8/" inline align=center
-<div style={{display:'flex',alignItems:'center',justifyContent:'center',width:'100%',height:'100%',background:'#080808',border:'1px solid rgba(103,232,249,.3)',fontFamily:'Inter, sans-serif',gap:8}}>
+```aura width=150 height=44 link="https://linkedin.com/in/YOUR_LINKEDIN" inline align=center
+<div style={{display:'flex',alignItems:'center',justifyContent:'center',width:'100%',height:'100%',background:'#080808',border:'1px solid rgba(103,232,249,.3)',fontFamily:'Inter, sans-serif'}}>
   <div style={{color:'#67E8F9',fontSize:11,letterSpacing:1.5}}>LINKEDIN</div>
 </div>
 ```
 ```aura width=150 height=44 link="https://github.com/Rehxn2k06" inline align=center
-<div style={{display:'flex',alignItems:'center',justifyContent:'center',width:'100%',height:'100%',background:'#080808',border:'1px solid rgba(103,232,249,.3)',fontFamily:'Inter, sans-serif',gap:8}}>
+<div style={{display:'flex',alignItems:'center',justifyContent:'center',width:'100%',height:'100%',background:'#080808',border:'1px solid rgba(103,232,249,.3)',fontFamily:'Inter, sans-serif'}}>
   <div style={{color:'#67E8F9',fontSize:11,letterSpacing:1.5}}>GITHUB</div>
 </div>
 ```
-```aura width=150 height=44 link="mailto:rehxn5762@gmail.com" inline align=center
-<div style={{display:'flex',alignItems:'center',justifyContent:'center',width:'100%',height:'100%',background:'#080808',border:'1px solid rgba(103,232,249,.3)',fontFamily:'Inter, sans-serif',gap:8}}>
+```aura width=150 height=44 link="mailto:YOUR_EMAIL" inline align=center
+<div style={{display:'flex',alignItems:'center',justifyContent:'center',width:'100%',height:'100%',background:'#080808',border:'1px solid rgba(103,232,249,.3)',fontFamily:'Inter, sans-serif'}}>
   <div style={{color:'#67E8F9',fontSize:11,letterSpacing:1.5}}>EMAIL</div>
 </div>
 ```
