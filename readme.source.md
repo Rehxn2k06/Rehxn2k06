@@ -2,10 +2,10 @@
 <div style={{width:'100%',height:'100%',background:'#080808',display:'flex',alignItems:'center',fontFamily:'Inter, sans-serif',position:'relative',overflow:'hidden'}}>
 
   <style>{`
-    @keyframes orb-a { 0%,100%{opacity:.35} 50%{opacity:1} }
-    @keyframes orb-b { 0%,100%{opacity:.25} 50%{opacity:.9} }
-    @keyframes scanmove { 0%{transform:translateY(0px);opacity:0} 8%{opacity:.85} 92%{opacity:.6} 100%{transform:translateY(384px);opacity:0} }
-    @keyframes dotblink { 0%,100%{opacity:.15} 50%{opacity:1} }
+    @keyframes orb-a { 0%,100%{opacity:.4} 50%{opacity:.85} }
+    @keyframes orb-b { 0%,100%{opacity:.2} 50%{opacity:.6} }
+    @keyframes scanmove { 0%{transform:translateY(-2px);opacity:0} 8%{opacity:.85} 92%{opacity:.5} 100%{transform:translateY(382px);opacity:0} }
+    @keyframes dotblink { 0%,100%{opacity:.2} 50%{opacity:1} }
     #ob1 { animation: orb-a 10s ease-in-out infinite; }
     #ob2 { animation: orb-b 14s ease-in-out infinite 3s; }
     #scl { animation: scanmove 7s linear infinite; }
@@ -15,37 +15,42 @@
   <svg width="800" height="380" style={{position:'absolute',top:0,left:0}}>
     <defs>
       <radialGradient id="rg1" cx="50%" cy="50%" r="50%">
-        <stop offset="0%"   stopColor="rgba(103,232,249,.3)"/>
-        <stop offset="70%"  stopColor="rgba(103,232,249,0)"/>
+        <stop offset="0%"   stopColor="rgba(103,232,249,.45)"/>
+        <stop offset="60%"  stopColor="rgba(103,232,249,.15)"/>
+        <stop offset="100%" stopColor="rgba(103,232,249,0)"/>
       </radialGradient>
       <radialGradient id="rg2" cx="50%" cy="50%" r="50%">
-        <stop offset="0%"   stopColor="rgba(103,232,249,.2)"/>
-        <stop offset="70%"  stopColor="rgba(103,232,249,0)"/>
+        <stop offset="0%"   stopColor="rgba(103,232,249,.3)"/>
+        <stop offset="60%"  stopColor="rgba(103,232,249,.1)"/>
+        <stop offset="100%" stopColor="rgba(103,232,249,0)"/>
       </radialGradient>
       <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="0%">
         <stop offset="0%"   stopColor="rgba(103,232,249,0)"/>
         <stop offset="35%"  stopColor="rgba(103,232,249,.55)"/>
-        <stop offset="50%"  stopColor="rgba(103,232,249,.9)"/>
+        <stop offset="50%"  stopColor="rgba(103,232,249,.95)"/>
         <stop offset="65%"  stopColor="rgba(103,232,249,.55)"/>
         <stop offset="100%" stopColor="rgba(103,232,249,0)"/>
       </linearGradient>
     </defs>
-    <ellipse id="ob1" cx="710" cy="-50" rx="230" ry="230" fill="url(#rg1)"/>
-    <ellipse id="ob2" cx="-60" cy="440" rx="190" ry="190" fill="url(#rg2)"/>
+
+    <ellipse id="ob1" cx="680" cy="80"  rx="200" ry="200" fill="url(#rg1)"/>
+    <ellipse id="ob2" cx="100" cy="300" rx="160" ry="160" fill="url(#rg2)"/>
     <rect    id="scl" x="0" y="-2" width="800" height="1.5" fill="url(#sg)"/>
-    <circle  id="sdt" cx="746" cy="31" r="2.8" fill="#67E8F9"/>
+
     <polyline points="32,18 18,18 18,32"       fill="none" stroke="rgba(103,232,249,.5)" strokeWidth="1.5"/>
     <polyline points="768,18 782,18 782,32"    fill="none" stroke="rgba(103,232,249,.5)" strokeWidth="1.5"/>
     <polyline points="18,348 18,362 32,362"    fill="none" stroke="rgba(103,232,249,.5)" strokeWidth="1.5"/>
     <polyline points="782,348 782,362 768,362" fill="none" stroke="rgba(103,232,249,.5)" strokeWidth="1.5"/>
+
+    <circle id="sdt" cx="756" cy="26" r="3" fill="#67E8F9"/>
   </svg>
 
-  <div style={{position:'absolute',top:24,right:44,display:'flex',alignItems:'center',gap:7}}>
-    <div style={{color:'rgba(103,232,249,.55)',fontSize:9,letterSpacing:2.5}}>STATUS: ACTIVE</div>
+  <div style={{position:'absolute',top:20,right:24,display:'flex',alignItems:'center',gap:7}}>
+    <div style={{display:'flex',color:'rgba(103,232,249,.6)',fontSize:9,letterSpacing:2.5}}>STATUS: ACTIVE</div>
   </div>
 
-  <div style={{display:'flex',flexDirection:'column',justifyContent:'center',flex:1,padding:'0 56px'}}>
-    <div style={{display:'flex',color:'rgba(103,232,249,.55)',fontSize:10,letterSpacing:4,marginBottom:18}}>REHAN IMTIYAJ MULLA  ·  ML ENGINEER</div>
+  <div style={{display:'flex',flexDirection:'column',justifyContent:'center',flex:1,padding:'0 56px',zIndex:1}}>
+    <div style={{display:'flex',color:'rgba(103,232,249,.6)',fontSize:10,letterSpacing:4,marginBottom:18}}>REHAN IMTIYAJ MULLA  ·  ML ENGINEER</div>
     <div style={{display:'flex',color:'#FFFFFF',fontSize:68,fontWeight:800,letterSpacing:-2,lineHeight:1}}>Building</div>
     <div style={{display:'flex',alignItems:'baseline',marginBottom:26}}>
       <div style={{color:'#FFFFFF',fontSize:68,fontWeight:800,letterSpacing:-2,lineHeight:1}}>Intelligence</div>
@@ -54,7 +59,7 @@
     <div style={{display:'flex',color:'rgba(255,255,255,.4)',fontSize:13.5,lineHeight:1.65}}>CSE + Data Science @ DSCE, Bengaluru  ·  Reliance Foundation Scholar 24  ·  Targeting quant / ML research</div>
   </div>
 
-  <div style={{position:'absolute',bottom:26,left:56,display:'flex',gap:40}}>
+  <div style={{position:'absolute',bottom:26,left:56,display:'flex',gap:40,zIndex:1}}>
     <div style={{display:'flex',flexDirection:'column',gap:3}}>
       <div style={{display:'flex',color:'rgba(255,255,255,.18)',fontSize:8,letterSpacing:2}}>LOCATION</div>
       <div style={{display:'flex',color:'rgba(255,255,255,.5)',fontSize:10}}>BENGALURU, IN</div>
