@@ -5,11 +5,9 @@
     @keyframes orb-a { 0%,100%{opacity:.4} 50%{opacity:.85} }
     @keyframes orb-b { 0%,100%{opacity:.2} 50%{opacity:.6} }
     @keyframes scanmove { 0%{transform:translateY(-2px);opacity:0} 8%{opacity:.85} 92%{opacity:.5} 100%{transform:translateY(382px);opacity:0} }
-    @keyframes dotblink { 0%,100%{opacity:.2} 50%{opacity:1} }
     #ob1 { animation: orb-a 10s ease-in-out infinite; }
     #ob2 { animation: orb-b 14s ease-in-out infinite 3s; }
     #scl { animation: scanmove 7s linear infinite; }
-    #sdt { animation: dotblink 2.5s ease-in-out infinite; }
   `}</style>
 
   <svg width="800" height="380" style={{position:'absolute',top:0,left:0}}>
@@ -42,10 +40,17 @@
     <polyline points="18,348 18,362 32,362"    fill="none" stroke="rgba(103,232,249,.5)" strokeWidth="1.5"/>
     <polyline points="782,348 782,362 768,362" fill="none" stroke="rgba(103,232,249,.5)" strokeWidth="1.5"/>
 
-    <circle id="sdt" cx="756" cy="26" r="3" fill="#67E8F9"/>
+    <circle cx="657" cy="26" r="3" fill="#67E8F9">
+      <animate attributeName="opacity" values="0.2; 1; 0.2" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <rect x="421" y="240" width="31" height="5.5" fill="#67E8F9">
+      <animate attributeName="opacity" values="1; 0; 1" dur="1.2s" calcMode="discrete" repeatCount="indefinite"/>
+    </rect>
   </svg>
 
   <div style={{position:'absolute',top:20,right:24,display:'flex',alignItems:'center',gap:7}}>
+    <div style={{width:6,height:6}}></div>
     <div style={{display:'flex',color:'rgba(103,232,249,.6)',fontSize:9,letterSpacing:2.5}}>STATUS: ACTIVE</div>
   </div>
 
@@ -54,7 +59,7 @@
     <div style={{display:'flex',color:'#FFFFFF',fontSize:68,fontWeight:800,letterSpacing:-2,lineHeight:1}}>Building</div>
     <div style={{display:'flex',alignItems:'baseline',marginBottom:26}}>
       <div style={{color:'#FFFFFF',fontSize:68,fontWeight:800,letterSpacing:-2,lineHeight:1}}>Intelligence</div>
-      <div style={{color:'#67E8F9',fontSize:68,fontWeight:200,lineHeight:1}}>_</div>
+      <div style={{width:31,height:68}}></div>
     </div>
     <div style={{display:'flex',color:'rgba(255,255,255,.4)',fontSize:13.5,lineHeight:1.65}}>CSE + Data Science @ DSCE, Bengaluru  ·  Reliance Foundation Scholar 24  ·  Targeting quant / ML research</div>
   </div>
@@ -184,9 +189,9 @@
 ```
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Rehxn2k06&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github&bg_color=080808&title_color=67E8F9&icon_color=67E8F9" height="155"/>
+  <img src="https://github-readme-stats.vercel.app/api?username=Rehxn2k06&amp;v=1&amp;show_icons=true&amp;theme=tokyonight&amp;hide_border=true&amp;rank_icon=github&amp;bg_color=080808&amp;title_color=67E8F9&amp;icon_color=67E8F9" height="155"/>
   &nbsp;&nbsp;
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rehxn2k06&layout=compact&theme=tokyonight&hide_border=true&bg_color=080808&title_color=67E8F9" height="155"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rehxn2k06&amp;v=1&amp;layout=compact&amp;theme=tokyonight&amp;hide_border=true&amp;bg_color=080808&amp;title_color=67E8F9" height="155"/>
 </p>
 
 ```aura width=150 height=44 link="https://linkedin.com/in/YOUR_LINKEDIN" inline align=center
